@@ -1,5 +1,4 @@
-"use client"
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Button, Col, Row } from 'antd';
 import { DownloadOutlined, GithubOutlined, LinkedinOutlined } from '@ant-design/icons';
 import { useInView } from 'react-intersection-observer';
@@ -31,7 +30,7 @@ const Hero = ({ title = "", description = "", nav = "home", titleBtn = "", hasGr
     const [inViewRef, inView] = useInView({
         triggerOnce: false, // "true" --> Only trigger once
     });
-    
+
     return (
         <div id={nav} style={{ minHeight: '80vh' }} className={nav === "projects" ? 'bg__' : 'bg__'}>
             <div style={{minHeight:'80vh'}} className='bs'>
@@ -42,8 +41,8 @@ const Hero = ({ title = "", description = "", nav = "home", titleBtn = "", hasGr
                             {description && <article dangerouslySetInnerHTML={{ __html: `${description}` }} />}
                             {titleBtn && <Button type='ghost' onClick={() => handleDownloadPDF()} icon={<DownloadOutlined />}>{titleBtn}</Button>}
                             <div>
-                                {gitLink && <a href={gitLink} target='_blank'><GithubOutlined style={{ fontSize: 45, color: '#171515', marginRight: 20 }} /></a>}
-                                {linkedInLink && <a href={linkedInLink} target='_blank'><LinkedinOutlined style={{ fontSize: 45, color: '#0A66C2' }} /></a>}
+                                {gitLink && <a href={gitLink} target='_blank' rel="noreferrer"><GithubOutlined style={{ fontSize: 45, color: '#171515', marginRight: 20 }} /></a>}
+                                {linkedInLink && <a href={linkedInLink} target='_blank' rel="noreferrer"><LinkedinOutlined style={{ fontSize: 45, color: '#0A66C2' }} /></a>}
                             </div>
                         </div>
                     </Col>

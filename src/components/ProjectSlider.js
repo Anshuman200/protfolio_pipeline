@@ -24,8 +24,7 @@ const ProjectSlider = () => {
     return (
         <Carousel {...settings} autoPlay slidesToShow={3} slickGoTo={2} arrows={true} autoplaySpeed={1000} >
             <div>
-                <a href={"http://dev.voorideshare.com"} passHref legacyBehavior>
-
+                <a href={"http://dev.voorideshare.com"}>
                     <Image height={300} width={400} style={{ minHeight: 250, width: '100%', paddingRight: 20 }} src="../assets/voo.png" alt='project media' />
                 </a>
                 {/* <a href="http://dev.voorideshare.com" target="_blank" rel="noopener noreferrer">
