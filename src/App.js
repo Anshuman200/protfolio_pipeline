@@ -4,7 +4,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      JAI SHRI RAM
+      <h1>
+        JAI SHRI RAM
+      </h1>
     </div>
   );
 }
