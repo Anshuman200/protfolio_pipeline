@@ -1,13 +1,10 @@
 'use client'
 import { Button, Col, Form, Input, Row } from 'antd'
 import React from 'react'
-import { useToasts } from 'react-toast-notifications'
 
 const Contact = ({ nav }) => {
-  const { addToast } = useToasts();
   const [form] = Form.useForm();
   const handleSubmitForm = (values) => {
-    addToast("Submitted successfully", { appearance: 'success', autoDismiss: true });
     console.log("Submitted", values)
     form.resetFields()
   }
