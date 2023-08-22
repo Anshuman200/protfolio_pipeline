@@ -6,6 +6,7 @@ function App() {
       <h1>
         JAI SHRI RAM
       </h1>
+      <h2>Ansh Singh</h2>
     </div>
   );
 }
