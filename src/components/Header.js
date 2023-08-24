@@ -10,8 +10,9 @@ const Header = () => {
                 <Image src={`next.svg`} width={50} height={50} blurDataURL='next.svg' alt='logo' />
             </div>
             <div className="right__nav">
+
                 <Link to="home" scroll={false}>
-                    Home
+                    Ansh
                 </Link>
                 <Link to="about" scroll={false}>
                     About
