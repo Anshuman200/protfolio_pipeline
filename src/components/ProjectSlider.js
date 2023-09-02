@@ -65,7 +65,7 @@ const ProjectSlider = () => {
                 return (
                     <div key={index} className='slider___containet'>
                         <Image src={itm?.media} height={200} width={400} preview={false} style={{ minHeight: 250, width: '100%', paddingRight: 20 }} alt='project media' />
-                        <a className='visit__btn' href={itm?.web_link} target="_blank">
+                        <a className='visit__btn' href={itm?.web_link} target="_blank" rel="noreferrer">
                             Visit Site
                         </a>
                     </div>
