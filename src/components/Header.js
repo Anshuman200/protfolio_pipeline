@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './style.css';
 import { Link } from 'react-scroll';
-import { Button, Drawer, Image } from 'antd';
+import { Button, Drawer } from 'antd';
 import { MenuOutlined } from '@ant-design/icons'
 
 const Header = () => {

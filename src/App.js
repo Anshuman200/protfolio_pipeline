@@ -1,6 +1,6 @@
 import { FloatButton } from 'antd';
 import Header from './components/Header';
-import Hero from './components/Hero';
+// import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
