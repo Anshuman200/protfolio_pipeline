@@ -1,30 +1,36 @@
-import React from 'react';
-import './style.css'
+import React, { useState } from 'react';
+import './style.css';
 import { Link } from 'react-scroll';
-import { Image } from 'antd';
+import { Button, Drawer, Image } from 'antd';
+import { MenuOutlined } from '@ant-design/icons'
 
 const Header = () => {
+    const [open, setOpen] = useState(false);
     return (
-        <div className="container common__container">
-            <div className="left__nav">
-                <Image src={`next.svg`} width={50} height={50} blurDataURL='next.svg' alt='logo' />
-            </div>
-            <div className="right__nav">
-
-                <Link to="home" scroll={false}>
-                    Ansh
-                </Link>
-                <Link to="about" scroll={false}>
-                    About
-                </Link>
-                <Link to="projects" scroll={false}>
-                    Projects
-                </Link>
-                <Link to="contact" scroll={false}>
-                    Contact
-                </Link>
+        <div className='header__wrapper'>
+            <div className="container common__container">
+                <div className='__nav__lg'>
+                    <div className="__nav">
+                        <Link to="home" activeStyle={{ color: '#000' }} spy={true} smooth={true} offset={-70} duration={500} delay={500}>Ansh </Link>
+                        <Link to="about" activeStyle={{ color: '#000' }} spy={true} smooth={true} offset={50} duration={500} delay={500}> About </Link>
+                        <Link to="projects" activeStyle={{ color: '#000' }} spy={true} smooth={true} offset={-80} duration={500} delay={500}> Projects </Link>
+                        <Link to="contact" activeStyle={{ color: '#000' }} spy={true} smooth={true} offset={-50} duration={500} delay={500}> Contact </Link>
+                    </div>
+                </div>
+                <div className='show__btn'>
+                    <Link to="home" activeStyle={{ color: '#000' }} spy={true} smooth={true} offset={50} duration={500} delay={500}>Ansh </Link>
+                    <Button onClick={() => setOpen(!open)} icon={<MenuOutlined />} />
+                </div>
             </div>
 
+            <Drawer placement="right" onClose={() => setOpen(!open)} open={open}>
+                <div className="__nav">
+                    <Link onClick={() => setOpen(!open)} to="home" activeStyle={{ color: '#000' }} spy={true} smooth={true} offset={-70} duration={500} delay={500}>Ansh </Link>
+                    <Link onClick={() => setOpen(!open)} to="about" activeStyle={{ color: '#000' }} spy={true} smooth={true} offset={50} duration={500} delay={500}> About </Link>
+                    <Link onClick={() => setOpen(!open)} to="projects" activeStyle={{ color: '#000' }} spy={true} smooth={true} offset={-80} duration={500} delay={500}> Projects </Link>
+                    <Link onClick={() => setOpen(!open)} to="contact" activeStyle={{ color: '#000' }} spy={true} smooth={true} offset={-50} duration={500} delay={500}> Contact </Link>
+                </div>
+            </Drawer>
         </div>
     )
 }

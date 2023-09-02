@@ -25,32 +25,37 @@ const skillData = [
     {
         id: 4,
         title: 'Firebase',
-        percentage: 60
+        percentage: 70
     },
     {
         id: 5,
-        title: 'HTML 5',
+        title: 'HTML/HTML 5',
         percentage: 80
     },
     {
         id: 6,
-        title: 'CSS 3',
+        title: 'CSS/CSS 3',
+        percentage: 80
+    },
+    {
+        id: 7,
+        title: 'JS',
         percentage: 80
     },
 ]
 
 const Skills = () => {
     return (
-        <div className='common__container' style={{ marginTop: '1rem' }}>
+        <div className='common__container m__auto' style={{ marginTop: '1rem' }}>
             <div className='skill' style={{ backgroundColor: 'rgba(255,255,255,0.8)' }} >
-                <h1 style={{ marginBottom: '1rem' }}>Skills</h1>
+                <h2 style={{ marginBottom: '1rem' }}>Skills</h2>
                 <Row gutter={[16, 16]}>
                     {skillData?.map((data, index) => {
                         return (
-                            <Col xs={24} sm={24} md={12} lg={12} xl={6} key={index}>
+                            <Col xs={12} sm={12} md={12} lg={12} xl={6} key={index}>
                                 <div className='skill__container'>
-                                    <h2 style={{ minWidth: '9rem' }}>{data?.title}</h2>
                                     <Progress type='dashboard' gapDegree={30} gapPosition='bottom' trailColor='red' strokeColor='rgb(51, 51, 223)' percent={data?.percentage} />
+                                    <h3 style={{ minWidth: '9rem' }}>{data?.title}</h3>
                                 </div>
                             </Col>
                         )

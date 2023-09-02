@@ -1,0 +1,9 @@
+Completed Points
+* Header
+* Contact
+* Skills
+* Projects
+
+Pending Points
+* Ansh
+* About

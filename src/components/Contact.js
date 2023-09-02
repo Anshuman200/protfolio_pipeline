@@ -14,10 +14,10 @@ const Contact = ({ nav }) => {
   }
 
   return (
-    <div id={nav} className='bg__' style={{ display: 'grid', placeItems: 'center', minHeight: '80vh', padding: '0.5rem' }}>
+    <div id={nav} className='m__auto common__container' style={{ display: 'grid', placeItems: 'center', minHeight: '90vh', padding: '0.5rem' }}>
       <div className="contact__wrapper">
         <h2>Contact Me</h2>
-        <Form form={form} onFinish={handleSubmitForm} onFinishFailed={onFinishFailed}>
+        <Form style={{marginTop:16}} form={form} onFinish={handleSubmitForm} onFinishFailed={onFinishFailed}>
           <Form.Item name="name" rules={[{ required: true, message: 'Name is required' }]}>
             <Input allowClear className='contact__input' placeholder='Ansh Singh' />
           </Form.Item>

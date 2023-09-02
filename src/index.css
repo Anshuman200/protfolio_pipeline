@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h2,
+h3 {
+  text-align: center;
+}
+
+h2 {
+  border-bottom: 4px solid #3333DF;
+  border-radius: 0.2rem;
+  width: fit-content;
+  margin: auto;
+  padding: 0.5rem 0;
+}
+.ant-carousel .slick-dots li{
+  background-color: #3333DF;
+  height: 0.2rem;
+  width: 1rem;
+  border-radius: 8rem;
+}
+.ant-carousel .slick-dots .slick-active {
+  height: 0.2rem;
+  background-color: #dfb133 !important;
+  width: 1.2rem;
+}

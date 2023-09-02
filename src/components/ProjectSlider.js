@@ -1,5 +1,12 @@
-import { Carousel, Image } from 'antd';
 import React from 'react';
+import { Carousel, Image } from 'antd';
+import vooImg from '../assets/voo.png';
+import vmdImg from '../assets/vmd.png';
+import mcImg from '../assets/mc.png';
+import flImg from '../assets/fl.png';
+import ftImg from '../assets/ft.png';
+import tlImg from '../assets/tl.png';
+import ehsImg from '../assets/ehs.png';
 
 const ProjectSlider = () => {
     const settings = {
@@ -21,45 +28,49 @@ const ProjectSlider = () => {
         ],
     };
 
+    const projectData = [
+        {
+            media: vooImg,
+            web_link: `http://dev.voorideshare.com`
+        },
+        {
+            media: vmdImg,
+            web_link: `http://vegansmeetdaily.com`
+        },
+        {
+            media: mcImg,
+            web_link: `http://miraclecloset.com`
+        },
+        {
+            media: flImg,
+            web_link: `http://admin.frontlinefinishca.com`
+        },
+        {
+            media: ftImg,
+            web_link: `http://familyadmin.solidappmaker.ml`
+        },
+        {
+            media: tlImg,
+            web_link: `http://admin.turkestanlines.com`
+        },
+        {
+            media: ehsImg,
+            web_link: `http://admin.ehsrecruitingcompany.com`
+        },
+    ]
+
     return (
-        <Carousel {...settings} autoPlay slidesToShow={3} slickGoTo={2} arrows={true} autoplaySpeed={1000} >
-            <div>
-                <a href={"http://dev.voorideshare.com"}>
-                    <Image height={300} width={400} style={{ minHeight: 250, width: '100%', paddingRight: 20 }} src="../assets/voo.png" alt='project media' />
-                </a>
-                {/* <a href="http://dev.voorideshare.com" target="_blank" rel="noopener noreferrer">
-                </a> */}
-            </div>
-            <div>
-                <a href="https://vegansmeetdaily.com/" target="_blank" rel="noopener noreferrer">
-                    <Image height={300} width={400} style={{ minHeight: 250, width: '100%', paddingRight: 20 }} src="../assets/vmd.png" alt='project media' />
-                </a>
-            </div>
-            <div>
-                <a href="https://miraclecloset.com/" target="_blank" rel="noopener noreferrer">
-                    <Image height={300} width={400} style={{ minHeight: 250, width: '100%', paddingRight: 20 }} src="../assets/mc.png" alt='project media' />
-                </a>
-            </div>
-            <div>
-                <a href="https://admin.frontlinefinishca.com/" target="_blank" rel="noopener noreferrer">
-                    <Image height={300} width={400} style={{ minHeight: 250, width: '100%', paddingRight: 20 }} src="../assets/fl.png" alt='project media' />
-                </a>
-            </div>
-            <div>
-                <a href="https://familyadmin.solidappmaker.ml/" target="_blank" rel="noopener noreferrer">
-                    <Image height={300} width={400} style={{ minHeight: 250, width: '100%', paddingRight: 20 }} src="../assets/ft.png" alt='project media' />
-                </a>
-            </div>
-            <div>
-                <a href="https://admin.ehsrecruitingcompany.com/" target="_blank" rel="noopener noreferrer">
-                    <Image height={300} width={400} style={{ minHeight: 250, width: '100%', paddingRight: 20 }} src="../assets/ehs.png" alt='project media' />
-                </a>
-            </div>
-            <div>
-                <a href="https://admin.turkestanlines.com/" target="_blank" rel="noopener noreferrer">
-                    <Image height={300} width={400} style={{ minHeight: 250, width: '100%', paddingRight: 20 }} src="../assets/tl.png" alt='project media' />
-                </a>
-            </div>
+        <Carousel {...settings} dots={true} autoPlay slidesToShow={3} slickGoTo={2} arrows={true} autoplaySpeed={1000} >
+            {projectData?.map((itm, index) => {
+                return (
+                    <div key={index} className='slider___containet'>
+                        <Image src={itm?.media} height={200} width={400} preview={false} style={{ minHeight: 250, width: '100%', paddingRight: 20 }} alt='project media' />
+                        <a className='visit__btn' href={itm?.web_link} target="_blank">
+                            Visit Site
+                        </a>
+                    </div>
+                )
+            })}
         </Carousel>
     )
 }

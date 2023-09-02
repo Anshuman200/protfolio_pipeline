@@ -1,9 +1,6 @@
 import React from 'react';
 import { Button, Col, Row } from 'antd';
 import { DownloadOutlined, GithubOutlined, LinkedinOutlined } from '@ant-design/icons';
-import { useInView } from 'react-intersection-observer';
-import CounterUp from './CounterUp';
-import ProjectSlider from './ProjectSlider';
 
 const otherStyle = {
     textAlign: 'center',
@@ -27,13 +24,11 @@ const Hero = ({ title = "", description = "", nav = "home", titleBtn = "", hasGr
         link.click();
         document.body.removeChild(link);
     };
-    const [inViewRef, inView] = useInView({
-        triggerOnce: false, // "true" --> Only trigger once
-    });
+
 
     return (
-        <div id={nav} style={{ minHeight: '80vh' }} className={nav === "projects" ? 'bg__' : 'bg__'}>
-            <div style={{minHeight:'80vh'}} className='bs'>
+        <div id={nav} style={{ minHeight: '80vh' }} className={nav === "projects" ? 'm__auto' : 'm__auto'}>
+            <div style={{ minHeight: '80vh' }} className='bs'>
                 <Row>
                     <Col xs={24} sm={24} md={24} lg={hasGrid ? 12 : 24}>
                         <div className='common__container'>
@@ -51,18 +46,6 @@ const Hero = ({ title = "", description = "", nav = "home", titleBtn = "", hasGr
                     </Col>
                 </Row>
             </div>
-            {nav === "projects" &&
-                <>
-                    <div className='common__container' style={{ paddingTop: '3rem', paddingBottom: '3rem' }}>
-                        <ProjectSlider />
-                    </div>
-                    <div className='project__counter' ref={inViewRef}>
-                        <CounterUp title='Project Completed' inView={inView} end={8} duration={2} />
-                        <CounterUp title='Year' inView={inView} end={1} duration={2} />
-                        <CounterUp title='Completion Ration' inView={inView} end={1.5} duration={2} />
-                    </div>
-                </>
-            }
         </div>
     )
 }
